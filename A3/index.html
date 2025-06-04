@@ -7,14 +7,20 @@
     <script>
         function greet()
         {
-            alert(txtName1.value+txtName2.value)
+            alert(txtName.value)
         }
-        
+        function calc()
+        {
+            let a=Number(t1.value)
+            let b=Number(t2.value)
+            alert(a+b)
+        }
     </script>
 </head>
 <body>
-    <input type="text" id="txtName1" />
-    <input type="text" id="txtName2" />
-    <button onclick="greet()", style="background-color: aquamarine;">Click</button>
+    <input type="text" id="t1">
+    <input type="text" id="t2">
+    <button onclick="calc()" style="background-color: aquamarine;">Submit</button>
+
 </body>
 </html>
