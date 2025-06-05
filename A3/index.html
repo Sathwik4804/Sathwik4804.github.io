@@ -1,37 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Add Numbers</title>
     <script>
-        function greet()
-        {
-            alert(txtName.value)
-        }
-        function calc()
-        {
-            let a=Number(t1.value)
-            let b=Number(t2.value)
-            
-            var addition=a+"+"+b+"="+(a+b);
-            var subtraction=a+"-"+b+"="+(a-b);
-            var multiplication=a+"*"+b+"="+(a*b);
-            var division= b!==0 ? (a+"/"+b+"="+(a/b)): "Error: Division by zero is not allowed";
-
-            document.getElementById("results").innerHTML=
-                "<p>"+addition+"</p>"+
-                "<p>"+subtraction+"</p>"+
-                "<p>"+multiplication+"</p>"+
-                "<p>"+division+"</p>";
+        function addNumbers() {
+            var a = Number(num1.value);
+            var b = Number(num2.value);
+            var sum = a + b;
+            alert("Sum = " + sum);
+            // dvResult.innerHTML = a + b;
         }
     </script>
 </head>
 <body>
-    <input type="text" id="t1">
-    <input type="text" id="t2">
-    <button onclick="calc()" style="background-color: aquamarine;">Submit</button>
+    <h1>Addition of 2 Numbers</h1>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <button onclick="addNumbers()" style="background-color: gold;">Add</button>
     <hr>
-    <div id="results"></div>
+    <!-- <div></div> -->
 </body>
 </html>
