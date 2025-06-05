@@ -13,8 +13,17 @@
         {
             let a=Number(t1.value)
             let b=Number(t2.value)
-            // alert(a+b)
-            dvResult.innerHTML=a+b;
+            
+            var addition=a+"+"+b+"="+(a+b);
+            var subtraction=a+"-"+b+"="+(a-b);
+            var multiplication=a+"*"+b+"="+(a*b);
+            var division= b!==0 ? (a+"/"+b+"="+(a/b)): "Error: Division by zero is not allowed";
+
+            document.getElementById("results").innerHTML=
+                "<p>"+addition+"</p>"+
+                "<p>"+subtraction+"</p>"+
+                "<p>"+multiplication+"</p>"+
+                "<p>"+division+"</p>";
         }
     </script>
 </head>
