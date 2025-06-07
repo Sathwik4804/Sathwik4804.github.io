@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+  <title>Fruits List with Search and Delete</title>
+</head>
+<body>
+  <h1>Fruits List with Search and Delete</h1>
+  <h3>Objectives</h3>
+  <ul>
+    <li>Enter the fruit name and click Add to store it.</li>
+    <li>Click Search to view matching fruits (filter method).</li>
+    <li>Click Delete next to a fruit to remove it from the list.</li>
+  </ul>
+
+  <input type="text" id="fruitInput" placeholder="Enter fruit name">
+  <button onclick="addFruit()">Add</button>
+  <button onclick="searchFruit()">Search</button>
+
+  <ul id="fruitList"></ul>
+
+  <script>
+    let fruits = [];
+
+    function addFruit() {
+      const input = document.getElementById("fruitInput");
+      const fruit = input.value.trim();
+      if (fruit !== "") {
+        fruits.push(fruit);
+        input.value = "";
+        showFruits(fruits, true); 
+      }
+    }
+
+    function deleteFruit(value) {
+      fruits = fruits.filter(fruit => fruit !== value);
+      showFruits(fruits, true);  
+    }
+
+    function searchFruit() {
+      const query = document.getElementById("fruitInput").value.trim().toLowerCase();
+      const result = fruits.filter(fruit => fruit.toLowerCase().includes(query));
+      showFruits(result, false); 
+    }
+
+    function showFruits(list, withDelete) {
+      const listElement = document.getElementById("fruitList");
+      listElement.innerHTML = list.map(fruit => {
+        return withDelete
+          ? <li>${fruit} <button onclick="deleteFruit('${fruit}')">Delete</button></li>
+          : <li>${fruit}</li>;
+      }).join("");
+    }
+  </script>
+</body>
+</html>
