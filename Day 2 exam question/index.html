@@ -4,54 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mini Website</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Arial, sans-serif; background: #f2f2f2; }
-    nav {
-      background-color: #004aad;
-      padding: 15px;
-      display: flex;
-      justify-content: space-around;
-      color: white;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .container {
-      padding: 30px;
-      min-height: 60vh;
-      text-align: center;
-    }
-    .footer {
-      background-color: #003366;
-      color: green;
-      text-align: center;
-      padding: 10px;
-    }
-    .form-box {
-      width: 300px;
-      margin: 50px auto;
-      padding: 20px;
-      background: white;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-    }
-    input, button {
-      width: 100%;
-      margin: 10px 0;
-      padding: 10px;
-    }
-    #nav, #footer, .page { display: none; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- NAV -->
   <nav id="nav">
     <a href="#" onclick="showPage('home')">Home</a>
     <a href="#" onclick="showPage('about')">About</a>
@@ -59,7 +15,6 @@
     <a href="#" onclick="logout()">Logout</a>
   </nav>
 
-  <!-- LOGIN PAGE -->
   <div id="login" class="form-box">
     <h2>Login Page</h2>
     <input type="text" id="loginUser" placeholder="Username" required>
@@ -68,7 +23,6 @@
     <p>Not a Member? <a href="#" onclick="toggleForm()">Signup</a></p>
   </div>
 
-  <!-- REGISTRATION PAGE -->
   <div id="register" class="form-box" style="display: none;">
     <h2>Registration Page</h2>
     <input type="text" id="regUser" placeholder="Choose Username" required>
@@ -77,26 +31,21 @@
     <p>Already a Member? <a href="#" onclick="toggleForm()">Login</a></p>
   </div>
 
-  <!-- HOME PAGE -->
   <div id="home" class="page container">
     <h2>Welcome to the Home Page</h2>
-    <p>Design pages based on your project</p>
   </div>
 
-  <!-- ABOUT PAGE -->
   <div id="about" class="page container">
     <h2>About Page</h2>
-    <p>This is a mini project website built using HTML, CSS, and JS.</p>
   </div>
 
-  <!-- CONTACT PAGE -->
   <div id="contact" class="page container">
     <h2>Contact Us</h2>
     <p>Email: example@domain.com<br>Phone: +91-1234567890</p>
   </div>
 
   <script>
-    let users = {}; // Store registered users
+    let users = {}; 
 
     function toggleForm() {
       const loginBox = document.getElementById('login');

@@ -1,0 +1,49 @@
+*{ 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+body{ 
+    font-family: Arial,sans-serif; 
+    background: #f2f2f2; 
+}
+nav{
+    background-color: #004aad;
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      padding: 30px;
+      min-height: 60vh;
+      text-align: center;
+    }
+    .footer {
+      background-color: #003366;
+      color: green;
+      text-align: center;
+      padding: 10px;
+    }
+    .form-box {
+      width: 300px;
+      margin: 50px auto;
+      padding: 20px;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    input, button {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+    }
+    #nav, #footer, .page { display: none; }
